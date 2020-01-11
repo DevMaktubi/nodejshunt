@@ -17,7 +17,6 @@ mongoose.connect(
   `mongodb://${DB_URL}`,
   {
     useNewUrlParser: true,
-    useUnifiedTopology: true
   });
 
 requireDir('./src/models');
@@ -25,7 +24,7 @@ requireDir('./src/models');
 
 
 // Rotas
-app.use('/api', require('./src/routes'))
+app.use('/', require('./src/routes'))
 
 
 var PORT = process.env.PORT || 3001
