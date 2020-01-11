@@ -24,5 +24,7 @@ requireDir('./src/models');
 app.use('/api', require('./src/routes'))
 
 
-app.listen(3001);
+var PORT = process.env.PORT || 3001
+
+app.listen(PORT);
 
