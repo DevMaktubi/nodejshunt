@@ -6,7 +6,6 @@ require('dotenv').config()
 
 
 const DB_URL = process.env.MONGO_URL
-const DB_PORT = process.env.PORT
 
 // Iniciando app
 const app = express();
@@ -15,7 +14,7 @@ app.use(cors())
 
 //Iniciando DataBase
 mongoose.connect(
-  `mongodb://${DB_URL}${DB_PORT}/`,
+  `mongodb://${DB_URL}`,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -29,7 +28,7 @@ requireDir('./src/models');
 app.use('/api', require('./src/routes'))
 
 
-var PORT = 3001
+var PORT = process.env.PORT || 3001
 
 app.listen(PORT);
 
