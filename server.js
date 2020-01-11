@@ -11,7 +11,7 @@ app.use(cors())
 
 //Iniciando DataBase
 mongoose.connect(
-  'mongodb://https://jshunt-apinode1.herokuapp.com/',
+  'mongodb://https://jshunt-apinode1.herokuapp.com:27017/',
   {
     useNewUrlParser: true,
   });
