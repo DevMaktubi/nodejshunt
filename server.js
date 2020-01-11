@@ -5,7 +5,6 @@ const requireDir = require('require-dir')
 require('dotenv').config()
 
 
-const DB_URL = process.env.MONGO_URL
 
 // Iniciando app
 const app = express();
@@ -14,7 +13,7 @@ app.use(cors())
 
 //Iniciando DataBase
 mongoose.connect(
-  `mongodb://${DB_URL}`,
+  process.env.MONGO_URL,
   {
     useNewUrlParser: true,
   });
