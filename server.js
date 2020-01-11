@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors')
 const mongoose = require('mongoose')
 const requireDir = require('require-dir')
-
+require('dotenv').config()
 
 // Iniciando app
 const app = express();
@@ -11,7 +11,7 @@ app.use(cors())
 
 //Iniciando DataBase
 mongoose.connect(
-  'mongodb://https://jshunt-apinode1.herokuapp.com:27017/',
+  process.env.MONGO_URL,
   {
     useNewUrlParser: true,
   });
