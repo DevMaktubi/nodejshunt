@@ -11,7 +11,7 @@ app.use(cors())
 
 //Iniciando DataBase
 mongoose.connect(
-  process.env.MONGO_URL,
+  `mongodb://localhost:27017/`,
   {
     useNewUrlParser: true,
   });
